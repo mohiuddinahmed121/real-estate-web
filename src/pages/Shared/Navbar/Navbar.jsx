@@ -13,7 +13,7 @@ const Navbar = () => {
             <NavLink to="/career">User Profile</NavLink>
          </li>
          <li>
-            <NavLink to="/News">Register</NavLink>
+            <NavLink to="/register">Register</NavLink>
          </li>
       </>
    );

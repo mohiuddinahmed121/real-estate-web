@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 
@@ -7,30 +8,51 @@ const Login = () => {
          <Header></Header>
          <Navbar></Navbar>
          <div>
-            <div className="hero bg-white min-h-screen">
-               <div className="hero-content flex-col lg:flex-row-reverse">
-                  <div className="text-center lg:text-left">
-                     <h1 className="text-5xl font-bold text-black">Login now!</h1>
-                     <p className="py-6 text-black font-bold">
-                        Get back to your account and discover what is new. <br /> Your secure
-                        gateway to all our services awaits you.
-                     </p>
+            <div className="">
+               <h2 className="text-3xl my-10 text-center">Please Login</h2>
+               <form className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+                  <div className="form-control ml-48">
+                     <label className="label mb-2">
+                        <span className="label-text">Email</span>
+                     </label>
+                     <br />
+                     <input
+                        type="email"
+                        placeholder="email"
+                        className="input input-bordered mb-3"
+                        name="email"
+                        required
+                     />
                   </div>
-                  <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                     <div className="card-body">
-                        <fieldset className="fieldset">
-                           <label className="fieldset-label">Email</label>
-                           <input type="email" className="input" placeholder="Email" />
-                           <label className="fieldset-label">Password</label>
-                           <input type="password" className="input" placeholder="Password" />
-                           <div>
-                              <a className="link link-hover">Forgot password?</a>
-                           </div>
-                           <button className="btn btn-neutral mt-4">Login</button>
-                        </fieldset>
-                     </div>
+                  <div className="form-control ml-48">
+                     <label className="label mb-2">
+                        <span className="label-text">Password</span>
+                     </label>
+                     <br />
+                     <input
+                        type="password"
+                        placeholder="password"
+                        className="input input-bordered mb-3"
+                        name="password"
+                        required
+                     />
+                     <br />
+                     <label className="label">
+                        <a href="#" className="label-text-alt link link-hover">
+                           Forgot password?
+                        </a>
+                     </label>
                   </div>
-               </div>
+                  <div className="form-control mt-6 text-center">
+                     <button className="btn btn-primary">Login</button>
+                  </div>
+               </form>
+               <p className="text-center mt-4">
+                  Don not have an account{" "}
+                  <Link className="text-blue-600 font-bold" to="/register">
+                     Register
+                  </Link>
+               </p>
             </div>
          </div>
       </div>

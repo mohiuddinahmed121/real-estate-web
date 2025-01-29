@@ -49,9 +49,6 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1 font-bold">{navLinks}</ul>
          </div>
          <div className="navbar-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-               <div className="w-10 rounded-full"></div>
-            </div>
             <Link to="/login">
                <button className="btn">Login</button>
             </Link>

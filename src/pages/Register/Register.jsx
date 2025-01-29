@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
+import Footer from "../../pages/Shared/Footer/Footer";
 
 const Register = () => {
    return (
@@ -72,13 +73,14 @@ const Register = () => {
                   <button className="btn btn-primary">Register</button>
                </div>
             </form>
-            <p className="ml-96 mt-1">
+            <p className="ml-96 mb-8">
                Already have an account?
                <Link className="text-blue-600 font-bold" to="/login">
                   Login
                </Link>
             </p>
          </div>
+         <Footer></Footer>
       </div>
    );
 };

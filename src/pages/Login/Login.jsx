@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
+import Footer from "../../pages/Shared/Footer/Footer";
 
 const Login = () => {
    return (
@@ -43,18 +44,19 @@ const Login = () => {
                         </a>
                      </label>
                   </div>
-                  <div className="form-control mt-6 text-center">
+                  <div className="form-control mt-1 text-center">
                      <button className="btn btn-primary">Login</button>
                   </div>
                </form>
-               <p className="text-center mt-4">
-                  Don not have an account{" "}
+               <p className="text-center mb-8">
+                  Don not have an account ?{" "}
                   <Link className="text-blue-600 font-bold" to="/register">
                      Register
                   </Link>
                </p>
             </div>
          </div>
+         <Footer></Footer>
       </div>
    );
 };

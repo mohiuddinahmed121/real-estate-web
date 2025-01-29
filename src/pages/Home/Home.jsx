@@ -1,7 +1,11 @@
+import Navbar from "../../pages/Shared/Navbar/Navbar";
+import Header from "../../pages/Shared/Header/Header";
+
 const Home = () => {
    return (
       <div>
-         <h1>helello assis 2</h1>
+         <Header></Header>
+         <Navbar></Navbar>
       </div>
    );
 };

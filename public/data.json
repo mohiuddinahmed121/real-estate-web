@@ -1,0 +1,50 @@
+[
+   {
+      "_id": 1,
+      "estate_title": "Luxury Villa in Beverly Hills",
+      "segment_name": "Residential",
+      "description": "A stunning 5-bedroom villa with a private pool, spacious garden, and modern interior design.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Beverly Hills, CA",
+      "facilities": ["Living Room", "Swimming Pool", "Kitchen", "Gym", "Garage"],
+      "image": "https://i.ibb.co.com/HTLcWyqS/pexels-binyaminmellish-1396132.jpg"
+   },
+   {
+      "_id": 2,
+      "estate_title": "Modern Apartment in New York",
+      "segment_name": "Residential",
+      "description": "A stylish 3-bedroom apartment with a breathtaking city view and top-notch amenities.",
+      "price": "$5,500/month",
+      "status": "rent",
+      "area": "1800 sq ft",
+      "location": "Manhattan, NY",
+      "facilities": ["Living Room", "Kitchen", "Gym", "Balcony"],
+      "image": "https://i.ibb.co.com/PZZ2L98S/pexels-scottwebb-1029599.jpg"
+   },
+   {
+      "_id": 3,
+      "estate_title": "Cozy Suburban House",
+      "segment_name": "Residential",
+      "description": "A perfect family home with a backyard, open-concept living space, and a peaceful neighborhood.",
+      "price": "$750,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Austin, TX",
+      "facilities": ["Living Room", "Kitchen", "Backyard", "Garage"],
+      "image": "https://i.ibb.co.com/m5GS2XGy/pexels-binyaminmellish-106399.jpg"
+   },
+   {
+      "_id": 4,
+      "estate_title": "Beachfront Condo",
+      "segment_name": "Residential",
+      "description": "A luxurious 2-bedroom condo with direct beach access and ocean views.",
+      "price": "$3,200/month",
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Miami, FL",
+      "facilities": ["Living Room", "Swimming Pool", "Kitchen", "Balcony"],
+      "image": "https://i.ibb.co.com/v4gmfcVJ/pexels-expect-best-79873-323780.jpg"
+   }
+]

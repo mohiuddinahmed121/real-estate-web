@@ -74,7 +74,7 @@ const Register = () => {
                </div>
             </form>
             <p className="ml-96 mb-8">
-               Already have an account?
+               Already have an account ?
                <Link className="text-blue-600 font-bold" to="/login">
                   Login
                </Link>

@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import Details from "../pages/Details/Details";
 import PrivateRoute from "./PrivateRoute";
+import Profile from "../pages/Profile/Profile";
 
 const router = createBrowserRouter([
    {
@@ -25,6 +26,14 @@ const router = createBrowserRouter([
                </PrivateRoute>
             ),
             loader: () => fetch("/data.json"),
+         },
+         {
+            path: "/profile",
+            element: (
+               <PrivateRoute>
+                  <Profile></Profile>
+               </PrivateRoute>
+            ),
          },
          {
             path: "/login",

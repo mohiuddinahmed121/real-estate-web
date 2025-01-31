@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-   const { signIn } = useContext(AuthContext);
+   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
    const location = useLocation();
    const navigate = useNavigate();
 
@@ -15,11 +15,34 @@ const Login = () => {
       const form = new FormData(e.currentTarget);
       const email = form.get("email");
       const password = form.get("password");
-      console.log("", email, password);
 
       signIn(email, password)
          .then((result) => {
             console.log(result.user);
+            navigate(location.state ? location.state : "/");
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   };
+
+   const handleGoogleSignIn = () => {
+      signInWithGoogle()
+         .then((result) => {
+            const user = result.user;
+            console.log(user);
+            navigate(location.state ? location.state : "/");
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   };
+
+   const handleGithubSignIn = () => {
+      signInWithGithub()
+         .then((result) => {
+            const user = result.user;
+            console.log(user);
             navigate(location.state ? location.state : "/");
          })
          .catch((error) => {
@@ -71,6 +94,16 @@ const Login = () => {
                      <button className="btn btn-primary">Login</button>
                   </div>
                </form>
+
+               <div className="text-center mb-10">
+                  <p>Or login with</p>
+                  <button onClick={handleGoogleSignIn} className="btn  btn-outline mr-10 mt-1">
+                     Google
+                  </button>
+                  <button onClick={handleGithubSignIn} className="btn btn-outline">
+                     Github
+                  </button>
+               </div>
                <p className="text-center mb-8">
                   Don not have an account ?{" "}
                   <Link className="text-blue-600 font-bold" to="/register">

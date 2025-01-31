@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import Footer from "../../pages/Shared/Footer/Footer";
@@ -7,8 +7,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
    const { signIn } = useContext(AuthContext);
-   // const location = useLocation();
-   // const navigate = useNavigate();
+   const location = useLocation();
+   const navigate = useNavigate();
 
    const handleLogin = (e) => {
       e.preventDefault();
@@ -17,13 +17,14 @@ const Login = () => {
       const password = form.get("password");
       console.log("", email, password);
 
-      signIn(email, password);
-      // .then((result) => {
-      //    console.log(result.user);
-      // })
-      // .catch((error) => {
-      //    console.log(error);
-      // });
+      signIn(email, password)
+         .then((result) => {
+            console.log(result.user);
+            navigate(location.state ? location.state : "/");
+         })
+         .catch((error) => {
+            console.log(error);
+         });
    };
 
    return (

@@ -2,8 +2,30 @@ import { Link } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import Footer from "../../pages/Shared/Footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+   const { signIn } = useContext(AuthContext);
+   // const location = useLocation();
+   // const navigate = useNavigate();
+
+   const handleLogin = (e) => {
+      e.preventDefault();
+      const form = new FormData(e.currentTarget);
+      const email = form.get("email");
+      const password = form.get("password");
+      console.log("", email, password);
+
+      signIn(email, password);
+      // .then((result) => {
+      //    console.log(result.user);
+      // })
+      // .catch((error) => {
+      //    console.log(error);
+      // });
+   };
+
    return (
       <div>
          <Header></Header>
@@ -11,7 +33,7 @@ const Login = () => {
          <div>
             <div className="">
                <h2 className="text-3xl my-10 text-center">Please Login</h2>
-               <form className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+               <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                   <div className="form-control ml-48">
                      <label className="label mb-2">
                         <span className="label-text">Email</span>

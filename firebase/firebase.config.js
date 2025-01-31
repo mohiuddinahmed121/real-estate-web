@@ -10,7 +10,7 @@ const firebaseConfig = {
    projectId: "residential-real-estate-web",
    storageBucket: "residential-real-estate-web.firebasestorage.app",
    messagingSenderId: "1002599719558",
-   appId: "1:1002599719558:web:1e9a3e19c9f5362d84e707",
+   appId: "1:1002599719558:web:9f79c8fb7732f79284e707",
 };
 
 // Initialize Firebase

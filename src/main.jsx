@@ -4,12 +4,15 @@ import { Helmet } from "react-helmet";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./Routes/Routes";
+import AuthProvider from "./providers/AuthProvider";
 
 createRoot(document.getElementById("root")).render(
    <StrictMode>
-      <Helmet>
-         <title>Good Home</title>
-      </Helmet>
-      <RouterProvider router={router}></RouterProvider>
+      <AuthProvider>
+         <Helmet>
+            <title>Good Home</title>
+         </Helmet>
+         <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
    </StrictMode>
 );

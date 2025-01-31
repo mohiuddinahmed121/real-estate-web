@@ -2,15 +2,38 @@ import { Link } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import Footer from "../../pages/Shared/Footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+   const { createUser } = useContext(AuthContext);
+
+   const handleRegister = (e) => {
+      e.preventDefault();
+      const form = new FormData(e.currentTarget);
+
+      const name = form.get("name");
+      const photo = form.get("photo");
+      const email = form.get("email");
+      const password = form.get("password");
+      console.log(name, photo, email, password);
+
+      createUser(email, password)
+         .then((result) => {
+            console.log(result.user);
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   };
+
    return (
       <div>
          <Header></Header>
          <Navbar></Navbar>
          <div>
             <h2 className="text-3xl my-6 ml-96">Please Register</h2>
-            <form className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+            <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                <div className="form-control">
                   <label className="label mb-1">
                      <span className="label-text">Name</span>

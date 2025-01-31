@@ -2,13 +2,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../pages/Shared/Header/Header";
 import Navbar from "../../pages/Shared/Navbar/Navbar";
 import Footer from "../../pages/Shared/Footer/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
    const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
    const location = useLocation();
    const navigate = useNavigate();
+
+   const [loginError, setLoginError] = useState("");
+   const [showPassword, setShowPassword] = useState("false");
 
    const handleLogin = (e) => {
       e.preventDefault();
@@ -16,13 +21,14 @@ const Login = () => {
       const email = form.get("email");
       const password = form.get("password");
 
+      setLoginError("");
       signIn(email, password)
          .then((result) => {
             console.log(result.user);
             navigate(location.state ? location.state : "/");
          })
          .catch((error) => {
-            console.log(error);
+            setLoginError(error.message);
          });
    };
 
@@ -76,13 +82,21 @@ const Login = () => {
                         <span className="label-text">Password</span>
                      </label>
                      <br />
-                     <input
-                        type="password"
-                        placeholder="password"
-                        className="input input-bordered mb-3"
-                        name="password"
-                        required
-                     />
+                     <div className="relative">
+                        <input
+                           type={showPassword ? "text" : "password"}
+                           placeholder="password"
+                           className="input input-bordered"
+                           name="password"
+                           required
+                        />
+                        <span
+                           className="absolute top-[13px] right-48"
+                           onClick={() => setShowPassword(!showPassword)}
+                        >
+                           {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+                        </span>
+                     </div>
                      <br />
                      <label className="label">
                         <a href="#" className="label-text-alt link link-hover">
@@ -94,7 +108,9 @@ const Login = () => {
                      <button className="btn btn-primary">Login</button>
                   </div>
                </form>
-
+               <div className="ml-[230px] mb-10">
+                  {loginError && <p className="text-red-600 ml-96">{loginError}</p>}
+               </div>
                <div className="text-center mb-10">
                   <p>Or login with</p>
                   <button onClick={handleGoogleSignIn} className="btn  btn-outline mr-10 mt-1">

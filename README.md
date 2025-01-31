@@ -6,3 +6,12 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+website name: Good Home
+Live site link: https://residential-real-estate-web.web.app/
+Feature:
+1/Registration using firebase
+2/login using firebase
+3/logout using firebase
+4/Details view option using private route
+5/User Profile option using private route
